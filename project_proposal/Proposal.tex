@@ -1,0 +1,125 @@
+\documentclass[11pt, oneside]{article}   	% use "amsart" instead of "article" for AMSLaTeX format
+
+\usepackage{geometry}                		% See geometry.pdf to learn the layout options. There are lots.
+\geometry{letterpaper}                   		% ... or a4paper or a5paper or ... 
+%\geometry{landscape}                		% Activate for rotated page geometry
+%\usepackage[parfill]{parskip}    		% Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}				% Use pdf, png, jpg, or eps§ with pdflatex; use eps in DVI mode								% TeX will automatically convert eps --> pdf in pdflatex		
+\usepackage{amssymb}
+\usepackage{pgfgantt}
+\usepackage{float}
+%SetFonts
+
+%SetFonts
+
+\title{Placing UK Research within the International STEM Funding Landscape}
+
+\begin{document}
+
+
+\begin{titlepage}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+\center
+\textsc{\LARGE MSc Project Proposal}\\[1.5cm] % Name of your university/college
+\textsc{\Large Imperial College London}\\[0.5cm] % Major heading such as course name
+\textsc{\large Computational Methods in Ecology and Evolution}\\[0.5cm] % Minor heading such as course title
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+\makeatletter
+\HRule \\[0.4cm]
+{ \huge \bfseries \@title}\\[0.4cm] % Title of your document
+\HRule \\[1.5cm]
+ 
+%----------------------------------------------------------------------------------------
+%	AUTHOR SECTION
+%----------------------------------------------------------------------------------------
+
+\begin{minipage}{0.4\textwidth}
+\begin{flushleft} \large
+\emph{Author:}\\
+Xuan Wang % Your name
+\end{flushleft}
+\end{minipage}
+~
+\begin{minipage}{0.4\textwidth}
+\begin{flushright} \large
+\emph{Leading Supervisor:} \\
+Dr. Samraat S. Pawar \\[1.2em] % Supervisor's Name
+\emph{Other Supervisor:} \\
+W. D. Pearse
+\end{flushright}
+\end{minipage}\\[2cm]
+\makeatother
+
+{\large \today}\\[2cm] % Date, change the \today to a set date if you want to be precise
+
+\vfill % Fill the rest of the page with whitespace
+
+\end{titlepage}
+					% Activate to display a given date or no date
+
+\maketitle
+
+\section{Introduction}
+
+The funding strategy for STEM discipline differs among countries, leading to differences in their development and contribution to the world. Understanding the allocation of different countries' funding could be beneficial to optimising resources. As the countries with the highest GDP, we analyse the data of the following countries: Australia, Canada, European Union (EU), India, New Zealand, the United Kingdom (UK), the United States of America (USA) and China. Machine learning will be applied for the data analysis. 
+
+\section{Methodology and Ideas}
+Fine-scale data will be used for our project. Mallet will be applied for the Machine Learning procedure. As the data for the other countries have already been collected, we will focus mainly on the task of collecting data from China. This could be retrieved from the public resources of China, such as the China Statistical Yearbook, the website of National Data, etc. We will apply pre-processing to the raw data, and the clean fine-scale data will be used for the analysis. HPC could be employed if the data is too big; the results from different countries will be compared for the final analysis.
+\bigbreak
+\noindent We will look into the following questions:
+\begin{itemize}
+\item How the research topics change in individual countries over decades; 
+\item Is there any bias in the funding of research;
+\item The differences in the funding priorities of each country;
+\item Is there any impact on the current funding strategy of the countries?
+\end{itemize}
+
+\section{Project Feasibility}
+
+The timeline for this project is displayed as follows:
+
+\begin{figure}[htbp]
+
+\begin{center}
+
+\begin{ganttchart}[y unit title=0.4cm,
+y unit chart=0.5cm,
+vgrid,hgrid, 
+title label anchor/.style={below=-1.6ex},
+title left shift=.05,
+title right shift=-.05,
+title height=1,
+progress label text={},
+bar height=0.7,
+group right shift=0,
+group top shift=.6,
+group height=.3]{1}{20}
+%labels
+\gantttitle{Month}{20} \\
+\gantttitle{April}{4} 
+\gantttitle{May}{4} 
+\gantttitle{June}{4} 
+\gantttitle{July}{4} 
+\gantttitle{August}{4} \\
+%tasks
+\ganttbar{Review literature} {1}{4}\\
+\ganttbar{Find data}{3}{5} \\
+\ganttbar{Data pre-processing}{5}{8} \\
+\ganttbar{Applying machine learning approaches}{9}{14} \\
+\ganttbar{Write up}{5}{20} \\
+
+
+
+\end{ganttchart}
+\end{center}
+\caption{Gantt Chart}
+\end{figure}
+
+\noindent The writing will be covered throughout most of the time. The aim is to complete the first write-up by early August, and then modify it for the rest of the weeks. 
+
+
+
+
+\end{document}  
