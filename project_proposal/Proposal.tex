@@ -8,6 +8,7 @@
 \usepackage{amssymb}
 \usepackage{pgfgantt}
 \usepackage{float}
+\usepackage{natbib}
 %SetFonts
 
 %SetFonts
@@ -61,19 +62,34 @@ W. D. Pearse
 
 \maketitle
 
-\section{Introduction}
+\section{Introduction and Proposed Questions}
 
-The funding strategy for STEM discipline differs among countries, leading to differences in their development and contribution to the world. Understanding the allocation of different countries' funding could be beneficial to optimising resources. As the countries with the highest GDP, we analyse the data of the following countries: Australia, Canada, European Union (EU), India, New Zealand, the United Kingdom (UK), the United States of America (USA) and China. Machine learning will be applied for the data analysis. 
+The funding strategy for STEM discipline differs among countries, leading to differences in their development and contribution to the world. Nevertheless, it is not uncommon that bias sometimes affects the distribution of research funding [\cite{crudden2022gender}]. Therefore, studying the base of bias in research funding could be beneficial to understand the current research funding distribution and gaining a more objective result.
 
-\section{Methodology and Ideas}
-Fine-scale data will be used for our project. Mallet will be applied for the Machine Learning procedure. As the data for the other countries have already been collected, we will focus mainly on the task of collecting data from China. This could be retrieved from the public resources of China, such as the China Statistical Yearbook, the website of National Data, etc. We will apply pre-processing to the raw data, and the clean fine-scale data will be used for the analysis. HPC could be employed if the data is too big; the results from different countries will be compared for the final analysis.
 \bigbreak
-\noindent We will look into the following questions:
+\noindent In my project, we aim to find the answer to the question: Is there any bias within the international STEM funding landscape? In particular, the bias will be measured from the following aspects: [\cite{wojick2015government}]
+
 \begin{itemize}
-\item How the research topics change in individual countries over decades; 
-\item Is there any bias in the funding of research;
-\item The differences in the funding priorities of each country;
-\item Is there any impact of the current funding strategy on the development of the countries?
+\item Gender bias
+\\As one of the most prevalent topics in the academic thing, gender disparities have drawn a lot of attention. A research of Romy Lee and Naomi Ellemiers [\cite{van2015gender}] has revealed the existence of a research funding gap between different genders, which leads to an underrepresentation of females in academia. Therefore, gender bias would be an essential scale to measure in our report.
+\item Avoiding risky projects
+\\Due to financial constraints, the "risk" of a proposal is usually a critical point in whether the project will be funded. The proposal reviewers are generally less likely to fund a project with some errors or an idea that seems too outlandish, while sometimes these projects can be a revolutionary piece of work [\cite{franzoni2022funding}]. This raises the concern about the decreasing number of innovative and risky grant proposals [\cite{severin2021research}], and therefore will also be included in our study.
+\item Racial bias
+\\Disparities among funding for different races and ethnicities have been a more "invisible" bias compared to the others. According to the data reported in 2013, around 23.3\% of white applicants received funding from the National Institutes of Health (NIH), while the percentage for nonwhite applicants is 19.3\% [\cite{konkel2015racial}]. A significant difference has persisted for the past few decades, reducing the diversity in science. This bias should be taken into consideration as well.
+\end{itemize}
+
+
+\section{Methodology}
+Fine-scale data will be used for our project. Mallet will be applied for the Machine Learning procedure. As the countries with the highest GDP worldwide, we will use the data from Australia, Canada, China, European Union, India, New Zealand, the United Kingdom, and the United States of America. In addition to the existing data we have, the data from China needs to be collected, which can be retrieved from public resources of China such as the website of National Data: https://data.stats.gov.cn/index.htm. 
+We will apply pre-processing to the raw data, and the clean fine-scale data will be used for the analysis. HPC could be employed if the data is too big; the results from different countries will be compared for the final analysis.
+
+\section{Anticipated outputs and outcomes}
+
+\begin{itemize}
+\item The bias in research funding in a set of countries will be displayed concerning countries respectively;
+\item For each type of bias, the result for different countries will be taken into comparison;
+\item Analysis will be conducted regarding the potential reason and consequence of the biases.
+
 \end{itemize}
 
 \section{Project Feasibility}
@@ -107,7 +123,7 @@ group height=.3]{1}{20}
 \ganttbar{Review literature} {1}{4}\\
 \ganttbar{Find data}{3}{5} \\
 \ganttbar{Data pre-processing}{5}{8} \\
-\ganttbar{Applying machine learning approaches}{9}{14} \\
+\ganttbar{Applying machine learning approaches}{9}{16} \\
 \ganttbar{Write up}{5}{20} \\
 
 
@@ -119,7 +135,9 @@ group height=.3]{1}{20}
 
 \noindent The writing will be covered throughout most of the time. The aim is to complete the first write-up by early August, and then modify it for the rest of the weeks. 
 
+\pagebreak
 
-
+\bibliographystyle{agsm}
+\bibliography{Proposal}
 
 \end{document}  
