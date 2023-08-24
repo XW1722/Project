@@ -1,0 +1,15 @@
+﻿﻿Title:,"Chart 6 - Academic staff by academic cost centre and sex"
+Subtitle:,"Academic years 2014/15 to 2021/22"
+Reference ID:,OC025 Chart 6
+Data source:,HESA
+Data source link:,https://www.hesa.ac.uk/data-and-analysis/staff/chart-6
+Data file canonical link:,https://www.hesa.ac.uk/data-and-analysis/staff/chart-6.csv
+Licence:,Creative Commons Attribution 4.0 International Licence
+Date:,2023
+Filters:,Cost centre group,Agriculture, forestry & veterinary science 
+,Academic year,2014/15 
+
+
+"Cost centre","Female","Male"
+"109 Veterinary science","760","600"
+"110 Agriculture, forestry & food science","485","550"

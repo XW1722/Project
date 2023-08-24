@@ -1,0 +1,18 @@
+﻿﻿Title:,"Chart 6 - Academic staff by academic cost centre and sex"
+Subtitle:,"Academic years 2014/15 to 2021/22"
+Reference ID:,OC025 Chart 6
+Data source:,HESA
+Data source link:,https://www.hesa.ac.uk/data-and-analysis/staff/chart-6
+Data file canonical link:,https://www.hesa.ac.uk/data-and-analysis/staff/chart-6.csv
+Licence:,Creative Commons Attribution 4.0 International Licence
+Date:,2023
+Filters:,Cost centre group,Biological, mathematical & physical sciences 
+,Academic year,2018/19 
+
+
+"Cost centre","Female","Male"
+"111 Earth, marine & environmental sciences","1,365","2,385"
+"112 Biosciences","6,720","7,830"
+"113 Chemistry","1,280","3,115"
+"114 Physics","1,090","4,455"
+"122 Mathematics","1,115","3,870"

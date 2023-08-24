@@ -1,0 +1,20 @@
+﻿﻿Title:,"Chart 6 - Academic staff by academic cost centre and sex"
+Subtitle:,"Academic years 2014/15 to 2021/22"
+Reference ID:,OC025 Chart 6
+Data source:,HESA
+Data source link:,https://www.hesa.ac.uk/data-and-analysis/staff/chart-6
+Data file canonical link:,https://www.hesa.ac.uk/data-and-analysis/staff/chart-6.csv
+Licence:,Creative Commons Attribution 4.0 International Licence
+Date:,2023
+Filters:,Cost centre group,Engineering & technology 
+,Academic year,2016/17 
+
+
+"Cost centre","Female","Male"
+"115 General engineering","830","2,975"
+"116 Chemical engineering","320","905"
+"117 Mineral, metallurgy & materials engineering","305","890"
+"118 Civil engineering","455","1,530"
+"119 Electrical, electronic & computer engineering","640","3,740"
+"120 Mechanical, aero & production engineering","875","4,260"
+"121 IT, systems sciences & computer software engineering","1,530","5,345"
