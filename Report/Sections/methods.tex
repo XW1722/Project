@@ -1,0 +1,42 @@
+\section{Methods}
+
+My project aims to determine the proportion of males and females getting funded in the STEM area and conclude whether there is a gender bias in the research funding. The first step in our study is to apply topic analysis for the identification of the topic of each project; then, the classified data is used for the gender analysis among different subjects and UK universities. For the comparison, this report employed the ratio of funded females and males across time in various STEM categories and institutions. To account for all biases, including before the application stage, the ratio is calculated by dividing the funded males or females by the total number of staff in each classification for comparison. 
+
+\subsection{Data acquisition and characteristics}
+
+This study uses a raw dataset of title abstracts with 107760 projects gathered from UKRI [\cite{Flavia}], merging with a UKRI dataset of the relevant information of the projects, including the leading institution, applicant name, start and end date of the project, etc. These data will be processed, classified and then analysed. For the analysis, I use the total number of staff in each university and classification to calculate the funding ratio, where the dataset of the entire staff is downloaded from the website of the Higher Education Statistics Agency (HESA). This includes the gender data of staff in each university and different fields. Since the HESA data is only available from 2015 to 2022, only the title abstract data within this period is used for our analysis.
+
+\subsection{Procedures}
+
+\subsubsection{Data processing}
+
+The first step of our study is the pre-processing of the metadata. The raw dataset of the title abstracts is cleaned by several approaches, including the filtering of STEM funding bodies and the selection of valuable columns. The information in the clean UK data includes the project ID, funding body, the lead institution, the applicant's name, the date of the project, and the funding amount. In addition, the title abstracts are tokenised and filtered by dropping the rows where the number of tokens is smaller than 9, selecting only the data that provides meaningful information.
+\bigbreak
+\noindent Having done the pre-processing of raw metadata, we apply Natural Language Processing (NLP), specifically topic analysis, to the clean data.  Topic analysis is a machine-learning technique to identify topics by finding common themes in vast amounts of text [\cite{Flavia}]. Specifically, the Latent Dirichlet Analysis (LDA) was fitted on our clean data to find the underlying topic of each project in our dataset. As an example of topic analysis, LDA can detect the underlying topics in a collection of documents, and then determine how likely they belong to each topic by generating a likelihood distribution result [\cite{wikipedia2023latent}]. We applied LDA models with 50 to 200 topics in 25 increments to the data, and calculated the perplexity value for each of the models with different numbers of topics to determine the best-fitted model. The model with 200 topics is finally selected due to its lowest perplexity value compared to the others. 
+
+\subsubsection{Analysis}
+\noindent After implementing LDA on our dataset, we can obtain the conditional probability distribution of each project belonging to each of the 200 topics. I choose the topic with the highest probability as the corresponding topic for each project. The next step is the classification of the topics. By the results generated from LDA, we can have the keywords of each topic. To enhance efficiency, I employ the advanced machine-learning tool, ChatGPT, to sort the 200 topics into the following STEM categories depending on their keywords: Veterinary Science; Agriculture, Forestry \& Food Science; General Engineering; Chemical Engineering; Mineral, Metallurgy \& Materials Engineering; Civil Engineering; Electrical, Electronic \& Computer Engineering; Mechanical, Aero \& Production Engineering; IT, Systems Sciences \& Computer Software Engineering; Earth, Marine \& Environmental Sciences; Biosciences; Physics; Chemistry; Mathematics.\\
+\\
+To determine the gender for each project, I applied a Python package - Gender Guessor, to the leading applicant of each project in the clean data to distinguish their gender based on their names. The output of this Python package includes Male, Female, Mostly male, Mostly female, Unknown and Androgynous.  In this study, both "Male" and "Mostly male" outputs are classified as male, while "Female" and "Mostly female" are treated as female, and the other results are not considered due to the higher uncertainty and inaccuracy. The gender information is combined with the classification of each project and used for further analysis.\\
+\\
+\noindent The research is structured into the following segments:
+
+\textbf{1. Tracking gender-based funding trends in each classification.}
+
+Despite the recent policy initiatives aimed at promoting STEM research by increasing funding, as discussed earlier, it's unclear if these measures will effectively boost innovation among female researchers. Therefore, the primary objective of this study is to identify the funding trend for each gender with every classification during the period 2015 - 2022 and ascertain if a gender disparity is evident. To ensure robustness, hypothesis testing is also incorporated. Since we are comparing the time series of two groups of results (male and female), a two-sample t-test is employed to determine if there is a significant difference between the mean of funding for males and females. The test is conducted against the hypothesis:
+
+\begin{center}
+    \textit{H0: The mean funding for males and females is identical;}
+\end{center}
+\begin{center}
+    \textit{H1: The mean funding for males and females differs.}
+\end{center}
+
+This study uses a general significance level of 5\% for the testing. If the p-value appears to be smaller than 5\%, then it indicates that the result provides evidence for rejecting the null hypothesis; otherwise, there is probably a gender bias for the research funding over time.
+
+\textbf{2. Comparison of funding ratio for each gender in each classification and university.}
+
+The subsequent phase proceeds to the comparison, which aims to find the potential cause of the bias. I first compare the funding ratio among the different STEM categories to identify which area may be the primary contributor to the disparity. Secondly, to check the impact of institutions on each gender, I do the ratio comparison among universities. The ratio is computed for each gender by dividing the number of funded researchers within that gender by the total number of staff members of the same gender. 
+
+
+
