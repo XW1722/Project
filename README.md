@@ -14,6 +14,8 @@ The report is in the *Report* directory.
 
 The raw-data used in this repository are sourced from UKRI and HESA website respectively. The UKRI data is collected by colleagues, which can be retrieved from Onedrive: https://imperiallondon-my.sharepoint.com/personal/fcb5018_ic_ac_uk/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Ffcb5018%5Fic%5Fac%5Fuk%2FDocuments%2FFunding%2DLandscape. The HESA data includes the staff data across institutions: https://www.hesa.ac.uk/data-and-analysis/staff/working-in-he/characteristics; and that across various categories: https://www.hesa.ac.uk/data-and-analysis/staff/areas#sex.
 
+The UKRI data should be downloaded to the directory raw-data/fine-scale/UK. The clean data can be generated from the code in this repository.
+
 ## Required packages
 
 ### Python
