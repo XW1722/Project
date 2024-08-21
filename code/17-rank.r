@@ -69,6 +69,16 @@ rank_class <- ggplot(all, aes(x = difference, y = reorder(Classification, differ
             theme_bw() +
             labs(x = "Bias", y = "Classifications")
 
+# visualisation
+subject$difference <- (subject$Funded_Male / subject$class_Male) - (subject$Funded_Female / subject$class_Female)
+rank_dist <- ggplot(subject, aes(x = Year, y = difference, color = Classification)) +  
+  geom_line() +
+  labs(x = "Year", y = "Difference", title = "Distribution of the gender difference in funding ratios Over Years") +  
+  theme_bw()
+
+pdf('./results/difference_distribution.pdf')
+print(rank_dist)
+graphics.off()
 # ranking for universities
 unis <- uni %>% group_by(LeadInstitution) %>% summarise(Funded_Male = sum(Funded_Male), Funded_Female = sum(Funded_Female), uni_Male = sum(uni_Male), uni_Female = sum(uni_Female))
 unis$difference <- (unis$Funded_Male / unis$uni_Male) - (unis$Funded_Female / unis$uni_Female)

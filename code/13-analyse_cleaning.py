@@ -12,10 +12,10 @@ import pandas as pd
 
 # load the dataset
 classif = pd.read_csv('./results/fine-scale/3-200-result.csv', index_col=0)
-gender_agriculture = pd.read_csv('./raw-data/HESA/2022/agriculture.csv', skiprows=12, header = 0)
-gender_engine = pd.read_csv('./raw-data/HESA/2022/engine_tech.csv', skiprows=12, header = 0)
-gender_maths = pd.read_csv('./raw-data/HESA/2022/maths.csv', skiprows = 12, header = 0)
-gender_uni = pd.read_csv('./raw-data/HESA/2022/uni-gender.csv', skiprows = 18, header = 0, usecols=['HE provider', 'Female', 'Male', 'Other', 'Total'])
+gender_agriculture = pd.read_csv('./raw-data/HESA/2017/agriculture.csv', skiprows=12, header = 0)
+gender_engine = pd.read_csv('./raw-data/HESA/2017/engine_tech.csv', skiprows=12, header = 0)
+gender_maths = pd.read_csv('./raw-data/HESA/2017/maths.csv', skiprows = 12, header = 0)
+gender_uni = pd.read_csv('./raw-data/HESA/2017/uni-gender.csv', skiprows = 18, header = 0, usecols=['HE provider', 'Female', 'Male', 'Other', 'Total'])
 start_time = pd.read_csv('./clean-data/UKRI-project-metadata.csv', usecols = ['ProjectId', 'StartDate'])
 start_time['ProjectId'] = start_time['ProjectId'].str.replace('UKRI-', '')
 
@@ -46,6 +46,7 @@ gender_uni = gender_uni.rename(columns = {'HE provider': 'LeadInstitution', 'Fem
 
 # delete the columns where the university does not have value
 gender_uni = gender_uni.dropna(how='any')
+classif = classif.dropna(subset="FundingAmount")
 
 # set the classification into lower case and merge data
 gender_hesa['Classification'] = gender_hesa['Classification'].str.lower()
@@ -80,8 +81,8 @@ df['class_Female'] = df['class_Female'].astype(int)
 
 # merge with the corresponding time
 start_time['StartDate'] = pd.to_datetime(start_time['StartDate'], format = '%d/%m/%Y')
-year_2022 = start_time[start_time['StartDate'].dt.year == 2022]
-df = pd.merge(df, year_2022, on = 'ProjectId')
+year_2017 = start_time[start_time['StartDate'].dt.year == 2017]
+df = pd.merge(df, year_2017, on = 'ProjectId')
 
 # save the final data for analyse
-df.to_csv('./results/final_data/final_data_2022.csv', index = False)
+df.to_csv('./results/final_data/final_data_2017.csv', index = False)
